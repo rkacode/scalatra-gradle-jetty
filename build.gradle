@@ -1,0 +1,21 @@
+apply plugin: 'scala'
+apply plugin: 'war'
+
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+gretty {
+    servletContainer = 'jetty9'
+}
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.11.1'
+    compile 'org.scala-lang:scala-compiler:2.11.1'
+    compile 'org.scalatra:scalatra-scalate_2.11:2.3.1'
+    compile 'org.scalatra:scalatra_2.11:2.3.1'
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+}
